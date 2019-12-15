@@ -3,9 +3,10 @@ import UserController from "../../controller/user/User.controller";
 
 let router = express.Router();
 
+let data = new UserController();
+
 let UserRoutes = {
   all: router.get("/all",  (req, res) => {
-    let data = new UserController();
     data.getAllUsers(req,res);
   }),
   meta: router.get("/meta", (req, res) => {
