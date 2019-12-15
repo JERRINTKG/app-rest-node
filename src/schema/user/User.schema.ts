@@ -25,4 +25,4 @@ var UserSchema = new mongoose.Schema(
   { timestamps: true, collection: "user" }
 );
 
-export default UserSchema;
+export { UserSchema };
