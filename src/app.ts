@@ -4,6 +4,7 @@ import routesArray from "./api/index";
 import middleWareArray from "./middleware/index";
 import globalConstants from "./config/globalConstants";
 
+import mongodbConnect from "./config/mongodb";
 export default class App {
   public app: Application;
   public port: number;
@@ -13,7 +14,8 @@ export default class App {
     this.port = globalConstants.port;
     this.middlewares(middleWareArray);
     this.routes(routesArray);
-    this.listen();
+    // this.listen();
+    new mongodbConnect();
   }
 
   private middlewares(middleWares: {
