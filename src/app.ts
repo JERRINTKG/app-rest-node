@@ -10,12 +10,12 @@ export default class App {
   public port: number;
 
   constructor() {
+    new mongodbConnect();
     this.app = express();
     this.port = globalConstants.port;
     this.middlewares(middleWareArray);
     this.routes(routesArray);
-    // this.listen();
-    new mongodbConnect();
+    this.listen();
   }
 
   private middlewares(middleWares: {
