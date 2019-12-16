@@ -5,7 +5,7 @@ import middleWareArray from "./middleware/index";
 import globalConstants from "./config/globalConstants";
 
 import mongodbConnect from "./config/mongodb";
-export default class App {
+class App {
   public app: Application;
   public port: number;
 
@@ -41,4 +41,4 @@ export default class App {
   }
 }
 
-new App();
+export default new App();

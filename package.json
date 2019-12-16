@@ -4,8 +4,8 @@
   "description": "CRUD app by using express and mongodb",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/app.ts",
-    "start": "ts-node dist/app.js",
+    "start": "ts-node src/app.ts",
+    "dev": "ts-node dist/app.js",
     "build": "tsc -p ."
   },
   "author": "jerrintkg",
