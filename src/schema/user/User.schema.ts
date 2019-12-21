@@ -21,8 +21,7 @@ var UserSchema = new mongoose.Schema(
     bGroup: String,
     maritalStatus: String,
     aboutYou: String
-  },
-  { timestamps: true, collection: "user" }
+  }
 );
 
 export { UserSchema };

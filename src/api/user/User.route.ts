@@ -1,6 +1,6 @@
 import * as express from "express";
 import UserController from "../../controller/user/User.controller";
-import  Common from "../../helper/common";
+// import  Common from "../../helper/common";
 
 let router = express.Router();
 
@@ -10,7 +10,7 @@ let data = new UserController();
 // let path = helper.getPathUrl(__dirname);
 
 let UserRoutes = {
-  all: router.get("api/user/all",  (req, res) => {
+  all: router.get("/api/user/all",  (req, res) => {
     data.getAllUsers(req,res);
   }),
   meta: router.get("/meta", (req, res) => {

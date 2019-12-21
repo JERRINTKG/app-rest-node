@@ -4,7 +4,7 @@ import { LoggerSchema } from "../schema/logger/Logger.schema";
 
 const loggerMiddleware = (req: Request, resp: Response, next) => {
   // console.log('Request logged:', req.method, req.path)
-  let loggerModel = mongoose.model("log", LoggerSchema);
+  let loggerModel = mongoose.model("log", LoggerSchema , "logs");
 
   loggerModel.create(
     { route: req.path, method: req.method, dateTime: new Date() },
