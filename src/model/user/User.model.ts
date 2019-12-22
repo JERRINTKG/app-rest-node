@@ -8,7 +8,7 @@ export default class UserModel {
   }
 
   initModel() {
-    this.userModel = mongoose.model("user", UserSchema  ,"user");
+    this.userModel = mongoose.model("user", UserSchema, "user");
   }
   getAllUsers(callback) {
     this.userModel.find((err, doc) => {
