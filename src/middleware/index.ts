@@ -1,8 +1,8 @@
 import * as bodyParser from "body-parser";
-import loggerMiddleware from "./logger";
+import LoggerMiddleware from "./LoggerMiddleware";
 
 const middleWareArray = [
-  loggerMiddleware,
+  LoggerMiddleware.logTheHit,
   bodyParser.json(),
   bodyParser.urlencoded({ extended: true })
 ];
