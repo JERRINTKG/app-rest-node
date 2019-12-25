@@ -15,7 +15,7 @@ class UserController {
   getUserMeta  = (req, res) => {
     let postData  = {username : req.query.username};
     this.userModel.getUserMeta(postData,d => {
-      res.json({ status: true, data: [d] , message:"fetch success" });
+      res.json({ status: true, data: d , message:"fetch success" });
     });
   };
 
