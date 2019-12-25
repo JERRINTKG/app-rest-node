@@ -15,6 +15,6 @@ export default class UserModel {
   }
 
   getUserMeta(postData,callback) {
-    this.userModel.findOne({email: postData.username}).exec((err,doc)=> { callback(doc); }); 
+    this.userModel.findOne({email: postData.username}).select('email firstName lastName profileImage').exec((err,doc)=> { callback(doc); }); 
   }
 }
