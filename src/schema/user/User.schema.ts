@@ -3,9 +3,10 @@ import * as mongoose from "mongoose";
 var UserSchema = new mongoose.Schema(
   {
     email: String,
-    dob: { type: Date, default: Date.now },
     firstName: String,
     lastName: String,
+    password: String,
+    dob: { type: Date, default: Date.now },
     job: String,
     company: String,
     addressOne: String,
