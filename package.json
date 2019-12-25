@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/app.ts",
-    "dev": "ts-node dist/app.js",
     "build": "tsc -p .",
     "build:production": "webpack"
   },
