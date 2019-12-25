@@ -11,10 +11,10 @@ export default class UserModel {
     this.userModel = mongoose.model("user", UserSchema, "user");
   }
   getAllUsers(callback) {
-    this.userModel.find((err, doc) => { callback(doc); });
+    this.userModel.find().exec((err,doc)=> { callback(doc); });
   }
 
   getUserMeta(postData,callback) {
-    this.userModel.findOne({email: postData.username}, (err,doc)=> { callback(doc); });
+    this.userModel.findOne({email: postData.username}).exec((err,doc)=> { callback(doc); }); 
   }
 }
