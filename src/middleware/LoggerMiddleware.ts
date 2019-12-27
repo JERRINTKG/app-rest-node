@@ -9,7 +9,7 @@ class LoggerMiddleware {
   logTheHit = (req, res, next) => {
     let postData = { route: req.path, method: req.method, dateTime: new Date() };
     this.loggerModel.logTheHit(postData,d => {
-      console.log("Success");
+      // console.log("Success");
     });
     next();
   };

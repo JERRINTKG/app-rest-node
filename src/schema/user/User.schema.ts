@@ -19,7 +19,7 @@ var UserSchema = new mongoose.Schema(
     mobileNo: String,
     phoneNo: String,
     profileImage: String,
-    bGroup: String,
+    bloodGroup: String,
     maritalStatus: String,
     aboutYou: String
   }

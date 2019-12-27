@@ -6,7 +6,7 @@ let router = express.Router();
 let UserRoutes = {
   all: router.get("/api/user/all", UserController.getAllUsers),
   meta: router.get("/api/user/meta", UserController.getUserMeta),
-  add: router.get("/api/user/register", UserController.registerUser)
+  add: router.post("/api/user/register", UserController.registerUser)
 };
 
 export default UserRoutes;
