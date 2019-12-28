@@ -8,11 +8,14 @@ export default class MongodbConnect {
   }
 
   private setupDb() {
-    mongoose.connect(this.connectionString, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
-    var db = mongoose.connection;
-    return db;
+    mongoose
+      .connect(this.connectionString, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      })
+      .catch(error => {
+        // console.log(error.reason);
+        console.log("Database error");
+      });
   }
 }
