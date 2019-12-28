@@ -13,8 +13,8 @@ class App {
     new MongodbConnect();
     this.app = express();
     this.port = globalConstants.port;
-    this.routes(routesArray);
     this.middlewares(middleWareArray);
+    this.routes(routesArray);
     this.listen();
   }
 
