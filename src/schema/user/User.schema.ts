@@ -2,26 +2,27 @@ import * as mongoose from "mongoose";
 
 var UserSchema = new mongoose.Schema(
   {
-    email: String,
-    firstName: String,
-    lastName: String,
-    password: String,
+    email: { type: String, default: null },
+    firstName: { type: String, default: null },
+    lastName: { type: String, default: null },
+    password: { type: String, default: null },
     dob: { type: Date, default: Date.now },
-    job: String,
-    company: String,
-    addressOne: String,
-    addressTwo: String,
-    landMark: String,
-    country: String,
-    state: String,
-    pinCode: String,
-    gender: String,
-    mobileNo: String,
-    phoneNo: String,
-    profileImage: String,
-    bloodGroup: String,
-    maritalStatus: String,
-    aboutYou: String
+    job: { type: String, default: null },
+    company: { type: String, default: null },
+    addressOne: { type: String, default: null },
+    addressTwo: { type: String, default: null },
+    landMark: { type: String, default: null },
+    country: { type: String, default: null },
+    state: { type: String, default: null },
+    pinCode: { type: String, default: null },
+    gender: { type: String, default: null },
+    mobileNo: { type: String, default: null },
+    phoneNo: { type: String, default: null },
+    profileImage: { type: String, default: null },
+    bloodGroup: { type: String, default: null },
+    maritalStatus: { type: String, default: null },
+    aboutYou: { type: String, default: null },
+    status: { type: Boolean, default: false }
   }
 );
 
