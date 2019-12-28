@@ -37,7 +37,7 @@ class UserController {
       gender: req.body.gender,
       mobileNo: req.body.mobileNo,
       phoneNo: req.body.phoneNo,
-      profileImage: null,
+      // profileImage: null,
       bloodGroup: req.body.bloodGroup,
       maritalStatus: req.body.maritalStatus,
       aboutYou: req.body.aboutYou
