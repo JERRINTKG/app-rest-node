@@ -4,13 +4,14 @@ import routesArray from "./api/index";
 import middleWareArray from "./middleware/index";
 import globalConstants from "./config/globalConstants";
 
-import mongodbConnect from "./config/mongodb";
+import MongodbConnect from "./config/mongodb";
+
 class App {
   public app: Application;
   public port: number;
 
   constructor() {
-    new mongodbConnect();
+    new MongodbConnect();
     this.app = express();
     this.port = globalConstants.port;
     this.middlewares(middleWareArray);

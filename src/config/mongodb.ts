@@ -1,7 +1,7 @@
 import * as mongoose from "mongoose";
 import globalConstants from "./globalConstants";
 
-export default class mongodbConnect {
+export default class MongodbConnect {
   connectionString = globalConstants.moongodb;
   constructor() {
     this.setupDb();
