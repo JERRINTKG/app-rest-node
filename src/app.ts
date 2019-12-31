@@ -3,8 +3,7 @@ import * as express from "express";
 import globalConstants from "./config/globalConstants";
 import MongodbConnect from "./config/mongodb";
 import routesArray from "./api/index";
-import middleWareArray from "./middleware/index";
-import ErrorHandlerMiddleware from "./middleware/ErrorHandlerMiddleware";
+import { middleWareArrayOne, middleWareArrayTwo } from "./middleware/index";
 
 class App {
   public app: Application;
@@ -14,9 +13,9 @@ class App {
     new MongodbConnect();
     this.app = express();
     this.port = globalConstants.port;
-    this.middlewares(middleWareArray);
+    this.middlewares(middleWareArrayOne);
     this.routes(routesArray);
-    this.middlewares([ErrorHandlerMiddleware.errorHandler]);
+    this.middlewares(middleWareArrayTwo);
     this.listen();
   }
 
