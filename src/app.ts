@@ -1,10 +1,10 @@
 import { Application } from "express";
 import * as express from "express";
-import routesArray from "./api/index";
-import middleWareArray from "./middleware/index";
-// import ErrorHandlerMiddleware from "./middleware/ErrorHandlerMiddleware";
 import globalConstants from "./config/globalConstants";
 import MongodbConnect from "./config/mongodb";
+import routesArray from "./api/index";
+import middleWareArray from "./middleware/index";
+import ErrorHandlerMiddleware from "./middleware/ErrorHandlerMiddleware";
 
 class App {
   public app: Application;
@@ -16,7 +16,7 @@ class App {
     this.port = globalConstants.port;
     this.middlewares(middleWareArray);
     this.routes(routesArray);
-    // this.middlewares(ErrorHandlerMiddleware);
+    this.middlewares([ErrorHandlerMiddleware.errorHandler]);
     this.listen();
   }
 
