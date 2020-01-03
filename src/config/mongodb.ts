@@ -13,9 +13,11 @@ export default class MongodbConnect {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
+      .then(success => {
+        console.log(success);
+      })
       .catch(error => {
-        // console.log(error.reason);
-        console.log("Database error");
+        console.log(error.reason);
       });
   }
 }
