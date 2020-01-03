@@ -10,13 +10,20 @@ class App {
   public port: number;
 
   constructor() {
-    new MongodbConnect();
+    let mongo = new MongodbConnect();
     this.app = express();
     this.port = globalConstants.port;
     this.middlewares(middleWareArrayOne);
     this.routes(routesArray);
     this.middlewares(middleWareArrayTwo);
-    this.listen();
+    mongo
+      .setupDb()
+      .then((response) => {
+        this.listen();
+      })
+      .catch((error) => {
+        console.log("db error");
+      });
   }
 
   private middlewares(middleWares: {
