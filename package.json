@@ -2,7 +2,7 @@
   "name": "app-rest-node",
   "version": "1.0.0",
   "description": "CRUD app by using express and mongodb",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
     "start": "node dist/app.js",
     "start:local": "ts-node src/app.ts",
