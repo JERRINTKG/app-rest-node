@@ -7,7 +7,7 @@ let UserRoutes = {
   all: router.get("/api/user/all", UserController.getAllUsers),
   meta: router.get("/api/user/meta", UserController.getUserMeta),
   add: router.post("/api/user/register", UserController.registerUser),
-  dummy: router.post("/api/user/dummy", UserController.dummyCheck)
+  dummy: router.get("/api/user/dummy", UserController.dummyCheck)
 };
 
 export default UserRoutes;
