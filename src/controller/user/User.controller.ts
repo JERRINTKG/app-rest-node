@@ -48,6 +48,9 @@ class UserController {
     // res.json({ data: req.body });
   };
 
+  dummyCheck  = (req, res) => {
+        res.json({ status: true, data: [], message:"dummy fetch success" });
+    };
 }
 
 export default new UserController();
