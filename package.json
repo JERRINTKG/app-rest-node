@@ -4,7 +4,8 @@
   "description": "CRUD app by using express and mongodb",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/app.ts",
+    "start": "node dist/app.ts",
+    "start:local": "ts-node src/app.ts",
     "start:watch":"nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/app.ts",
     "build": "tsc -p .",
     "build:production": "webpack"
