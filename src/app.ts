@@ -7,12 +7,12 @@ import { middleWareArrayOne, middleWareArrayTwo } from "./middleware/index";
 
 class App {
   public app: Application;
-  public port: number;
+  public port;
 
   constructor() {
     let mongo = new MongodbConnect();
     this.app = express();
-    this.port = globalConstants.port;
+    this.port = process.env.PORT || globalConstants.port;
     this.middlewares(middleWareArrayOne);
     this.routes(routesArray);
     this.middlewares(middleWareArrayTwo);
