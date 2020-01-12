@@ -1,9 +1,11 @@
 import { Application } from "express";
 import * as express from "express";
+import { swaggerUi } from "swagger-ui-express";
 import globalConstants from "./config/globalConstants";
 import MongodbConnect from "./config/mongodb";
 import routesArray from "./api/index";
 import { middleWareArrayOne, middleWareArrayTwo } from "./middleware/index";
+import swaggerDocument from "./documentation/swagger.json";
 
 class App {
   public app: Application;
@@ -13,6 +15,7 @@ class App {
     let mongo = new MongodbConnect();
     this.app = express();
     this.port = process.env.PORT || globalConstants.port;
+    this.swaggerDocument();
     this.middlewares(middleWareArrayOne);
     this.routes(routesArray);
     this.middlewares(middleWareArrayTwo);
@@ -24,6 +27,10 @@ class App {
       .catch((error) => {
         console.log("db error");
       });
+  }
+
+  private swaggerDocument(){
+    this.app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
 
   private middlewares(middleWares: {
