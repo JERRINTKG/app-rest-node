@@ -1,6 +1,6 @@
 import { Application } from "express";
-import * as express from "express";
-import { swaggerUi } from "swagger-ui-express";
+import express from "express";
+import swaggerUi from "swagger-ui-express";
 import globalConstants from "./config/globalConstants";
 import MongodbConnect from "./config/mongodb";
 import routesArray from "./api/index";
@@ -21,16 +21,16 @@ class App {
     this.middlewares(middleWareArrayTwo);
     mongo
       .setupDb()
-      .then((response) => {
+      .then(response => {
         this.listen();
       })
-      .catch((error) => {
+      .catch(error => {
         console.log("db error");
       });
   }
 
-  private swaggerDocument(){
-    this.app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  private swaggerDocument() {
+    this.app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
 
   private middlewares(middleWares: {
