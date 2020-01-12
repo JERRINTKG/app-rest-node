@@ -1,4 +1,4 @@
-import * as mongoose from "mongoose";
+import mongoose from "mongoose";
 import { LoggerSchema } from "../../schema/logger/Logger.schema";
 
 export default class LoggerModel {

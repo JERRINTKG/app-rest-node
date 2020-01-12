@@ -1,4 +1,4 @@
-import * as mongoose from "mongoose";
+import mongoose from "mongoose";
 import { ErrorHandlerSchema } from "../../schema/errorhandler/ErrorHandler.schema";
 
 export default class ErrorHandlerModel {

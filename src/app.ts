@@ -30,7 +30,10 @@ class App {
   }
 
   private swaggerDocument() {
-    this.app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    let router = express.Router();
+    router.use("/", swaggerUi.serve);
+    router.get("/", swaggerUi.setup(swaggerDocument));
+    this.app.use("/",router);
   }
 
   private middlewares(middleWares: {

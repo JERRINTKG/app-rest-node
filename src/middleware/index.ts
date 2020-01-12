@@ -1,4 +1,4 @@
-import * as bodyParser from "body-parser";
+import bodyParser from "body-parser";
 import LoggerMiddleware from "./LoggerMiddleware";
 import HeadersMiddleware from "./HeadersMiddleware";
 import ErrorHandlerMiddleware from "./ErrorHandlerMiddleware";
